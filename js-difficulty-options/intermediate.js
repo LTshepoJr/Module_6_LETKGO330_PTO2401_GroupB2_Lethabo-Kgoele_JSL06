@@ -27,6 +27,13 @@ function displayMenuItems(menu) {
     }
 
     // HINT: Attach a click event listener to the list item to add it to the order
+    let liList = udList.querySelectorAll("li");
+    let orderList = document.getElementById("order-items");
+    liList.forEach((li) => {
+      li.addEventListener("click", () => {
+        orderList.appendChild(liList);
+      });
+    });
 
     // HINT: Append the list item to the category's list
   }
