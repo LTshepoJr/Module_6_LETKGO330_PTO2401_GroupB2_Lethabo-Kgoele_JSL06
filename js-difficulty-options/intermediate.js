@@ -1,8 +1,8 @@
 // Sample menu data
 const menu = {
-  Starters: ["Garlic Bread", "Bruschetta"],
-  MainCourses: ["Margherita Pizza", "Spaghetti Carbonara"],
-  Desserts: ["Tiramisu", "Cheesecake"],
+  Starters: ["Garlic Bread", "Bruschetta", "Stuffed Mushrooms"],
+  MainCourses: ["Margherita Pizza", "Spaghetti Carbonara", "Chicken Parmesan"],
+  Desserts: ["Tiramisu", "Cheesecake", "Chocolate Lava Cake"],
 };
 
 // HINT: Function to display menu items by category
@@ -18,11 +18,14 @@ function displayMenuItems(menu) {
     menuContainer.appendChild(h3Element);
     // HINT: Create a list element for the items in the category
     let udList = document.createElement("ul");
-    let itemList = document.createElement("li");
     // HINT: Loop through the items in the category and create list items
-    itemList.textContent = items[0];
-    udList.appendChild(itemList);
-    menuContainer.appendChild(udList);
+    for (let list of items) {
+      let itemList = document.createElement("li");
+      itemList.textContent = list;
+      udList.appendChild(itemList);
+      menuContainer.appendChild(udList);
+    }
+
     // HINT: Attach a click event listener to the list item to add it to the order
 
     // HINT: Append the list item to the category's list
