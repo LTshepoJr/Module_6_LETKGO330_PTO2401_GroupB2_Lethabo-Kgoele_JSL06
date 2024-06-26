@@ -27,14 +27,10 @@ function displayMenuItems(menu) {
     }
 
     // HINT: Attach a click event listener to the list item to add it to the order
-    let orderList = document.getElementById("order-items");
-    const listToOrder = (event) => {
-      const cloneItems = event.target.cloneNode(true);
-      orderList.appendChild(cloneItems);
-    };
+
     // HINT: Append the list item to the category's list
     Array.from(udList.children).forEach((listItem) => {
-      listItem.addEventListener("click", listToOrder);
+      listItem.addEventListener("click", addToOrder);
     });
   }
 }
@@ -43,14 +39,15 @@ function displayMenuItems(menu) {
 function addToOrder(itemName) {
   // HINT: Get references to the order items list and order total element in your HTML
   let orderTotalElem = document.getElementById("order-total");
+  let orderList = document.getElementById("order-items");
   // HINT: Create a list item for the order
-
+  const cloneItems = itemName.target.cloneNode(true);
   // HINT: Append the list item to the order items list
-
+  orderList.appendChild(cloneItems);
   // HINT: Calculate and update the total price
-  const currentTotal = parseFloat();
+  const currentTotal = 0;
   const itemPrice = 60; // Assuming each item costs R90 (you can customize this)
-  const newTotal = 7;
+  const newTotal = currentTotal + itemPrice;
   orderTotalElem.textContent = newTotal.toFixed(2);
 }
 
