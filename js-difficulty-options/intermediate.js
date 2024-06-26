@@ -27,22 +27,23 @@ function displayMenuItems(menu) {
     }
 
     // HINT: Attach a click event listener to the list item to add it to the order
-    let liList = udList.querySelectorAll("li");
     let orderList = document.getElementById("order-items");
-    liList.forEach((li) => {
-      li.addEventListener("click", () => {
-        orderList.appendChild(liList);
-      });
-    });
-
+    const listToOrder = (event) => {
+      const cloneItems = event.target.cloneNode(true);
+      orderList.appendChild(cloneItems);
+    };
     // HINT: Append the list item to the category's list
+    Array.from(udList.children).forEach((listItem) => {
+      listItem.addEventListener("click", listToOrder);
+    });
   }
 }
 
 // HINT: Callback function for adding an item to the order
 function addToOrder(itemName) {
   // HINT: Get references to the order items list and order total element in your HTML
-
+  let orderListItems = document.getElementById("order-items");
+  let orderTotal = document.getElementById("order-total");
   // HINT: Create a list item for the order
 
   // HINT: Append the list item to the order items list
