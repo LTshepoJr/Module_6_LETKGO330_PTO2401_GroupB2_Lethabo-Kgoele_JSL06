@@ -34,7 +34,7 @@ function displayMenuItems(menu) {
     });
   }
 }
-
+let newTotal = 0;
 // HINT: Callback function for adding an item to the order
 function addToOrder(itemName) {
   // HINT: Get references to the order items list and order total element in your HTML
@@ -45,9 +45,8 @@ function addToOrder(itemName) {
   // HINT: Append the list item to the order items list
   orderList.appendChild(cloneItems);
   // HINT: Calculate and update the total price
-  const currentTotal = 0;
   const itemPrice = 60; // Assuming each item costs R90 (you can customize this)
-  const newTotal = currentTotal + itemPrice;
+  newTotal += itemPrice;
   orderTotalElem.textContent = newTotal.toFixed(2);
 }
 
